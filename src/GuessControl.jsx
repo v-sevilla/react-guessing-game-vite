@@ -6,16 +6,13 @@ function GuessControl ({onGuess}) {
   const [currentGuess, setCurrentGuess] = useState("")
 
   const handleInputChange = (event) => {
-    const newGuess = event.target.value
+    const newGuess = Number(event.target.value)
     setCurrentGuess(newGuess)
   }
 
   const onSubmitGuess = (e) => {
     e.preventDefault();
-    const newGuess = {
-      title: currentGuess,
-    }
-    onGuess(newGuess) 
+    onGuess(currentGuess) 
     setCurrentGuess("")
   }
 
